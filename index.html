@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="controller">
+            <div class="maze-controller">
+                <div class="controller-title">
+                    <span>Maze Generator<span>
+                </div>
+                <div class="dimension">
+                    <label>Height</label>
+                    <input type="text" class="num-input" id="grid-height">
+                    <label>Width</label>
+                    <input type="text" class="num-input" id="grid-width">
+                    <button class="btn" id="grid-generate">Generate Grid</button>
+                </div>
+                <div class="speed-algo">
+                    <label>Speed</label>
+                    <input id="maze-speed" type="range" min="1" max="5" value="3">
+                    <label>Algo</label>
+                    <select id="maze-algo">
+                        <option value="recursive_division_block">Recursive Divion Block</option>
+                        <option value="recursive_division_line">Recursive Divion Line</option>
+                        <option value="kruskals_line">Kruskals Line</option>
+                        <option value="recursive_backtracker_line">Recursive Backtracker Line</option>
+                        <option value="prims_line">Prims Line</option>
+                        <option value="sidewinder_line">Sidewinder Line</option>
+                        <option value="binarytree_line">BinaryTree Line</option>
+                        <option value="growingtree_line">GrowingTree Line</option>
+                        
+                        
+                    </select>
+                </div>
+                <div class="btn-row">
+                    <button class="btn" id="startMazeBtn">Start</button>
+                    <button class="btn" id="nextMoveMazeBtn">Next</button>
+                    <button class="btn" id="saveMazeBtn">Save Maze</button>
+                </div>
+            </div>
+            <div class="search-controller">
+                <div class="speed-algo">
+                    <label>Speed</label>
+                    <input id="search-speed" type="range" min="1" max="5" value="3">
+                    <label>Algo</label>
+                    <select id="search-algo">
+                        <option value="dfs">DFS</option>
+                        <option value="bfs">BFS</option>
+                        <option value="astar">AStar</option>
+                    </select>
+                </div>
+                <button class="btn" id="startSearchBtn">Search</button>
+                <button class="btn" id="nextMoveSearchBtn">Next</button>
+                <button class="btn" id="resetSearchBtn">Reset</button>
+
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid">
+
+            </div>
+            <div class="info">
+                <ul id="savedMazesList"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="util.js"></script>
+<script src="dsCopied.js"></script>
+<script src="grid_generator.js"></script>
+<script src="grid_traversal.js"></script>
+<script src="main.js"></script>
+
+</html>

@@ -1,0 +1,126 @@
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    --cell-size: 16px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.controller {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.maze-controller {
+    width: 50%;
+}
+.search-controller {
+    width: 50%;
+}
+.grid-container {
+    display: flex;
+    flex-direction: row;
+}
+.hiddenMaze {
+    display: none;
+}
+.savedMazeItem:hover ~ .hiddenMaze {
+    display: block;
+    z-index: 2
+}
+
+.num-input {
+    width: 30px;
+}
+table {
+    border-spacing: 0px;
+    border: 0.5px solid black;
+    background-color: rgb(166, 219, 236);
+}
+.cell {
+    height: var(--cell-size);
+    width: var(--cell-size);
+    border: 1px solid rgba(114, 114, 114, 0.2);
+    padding: 0;
+    box-sizing: border-box;
+}
+/* .cell.north.south.east.west {
+    background-color: black;
+} */
+.north {
+    border-top-color: black;
+}
+.south {
+    border-bottom-color: black;
+}
+.east {
+    border-right-color: black;
+}
+.west {
+    border-left-color: black;
+}
+.start {
+    background-color: red !important;
+    animation: pulse 1s infinite;
+}
+.end {
+    background-color: green !important;
+    animation: pulse 1s infinite;
+}
+.visited {
+    background-color: rgb(168, 147, 229);
+    /* transition: background-color 0.1s ease; */
+    /* animation-name: example;
+    animation-duration: 0.4s; */
+}
+.path {
+    background-color: rgb(255, 251, 0);
+}
+.current {
+    background-color: red;
+}
+
+.maze-blocked {
+    background-color: black;
+}
+.maze-visited {
+    background-color: whitesmoke;
+}
+.maze-frontier {
+    background-color: rgb(102, 160, 236);
+    /* animation-name: example;
+    animation-duration: 0.4s; */
+}
+/* box-shadow: inset -1px 0 0 red, inset 0 -1px 0 red, inset 1px 0 0 red, inset 0 1px 0 red; */
+
+
+.specialBtn {
+    text-align: center; padding: .5rem; width: 16rem;
+    font-size: 2rem; border-radius: .5rem; margin-left: .25rem;
+}
+
+@keyframes example {
+    0%   {background-color: rgb(65, 17, 208);}
+    /* 25%  {background-color: rgb(85, 44, 208);} */
+    50%  {background-color: rgb(77, 205, 175);}
+    /* 75%  {background-color: rgb(137, 111, 215);} */
+    100% {background-color: rgb(237, 111, 111);}
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1.2);
+        border-radius: 3px;
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
